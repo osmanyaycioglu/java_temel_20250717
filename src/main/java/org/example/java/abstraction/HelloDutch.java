@@ -3,22 +3,22 @@ package org.example.java.abstraction;
 import java.io.Closeable;
 import java.io.IOException;
 
-public class HelloJp extends AbstractHello implements  Closeable {
+public class HelloDutch extends AbstractHello implements  Closeable {
 
-    public HelloJp() {
-        super("japonca");
+    public HelloDutch() {
+        super("almanca");
     }
 
     @Override
     public String sayHello(final String name,
                            final String surname) {
-        return "Ha " + name + " " + surname;
+        return "Hallo " + name + " " + surname;
     }
 
     @Override
     public String sayGoodbye(final String name,
                              final String surname) {
-        return "Ho " + name + " " + surname;
+        return "Go " + name + " " + surname;
     }
 
     @Override

@@ -1,4 +1,4 @@
-package org.example.statics;
+package org.example.arrays;
 
 // Camel - averageSpeed
 // Pascal - CarProcess

@@ -1,4 +1,4 @@
-package org.example.navigation;
+package org.example.statics;
 
 // Camel - averageSpeed
 // Pascal - CarProcess

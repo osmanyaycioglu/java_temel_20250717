@@ -2,33 +2,39 @@ package org.example.calculator;
 
 import java.util.Scanner;
 
-public class Calculator {
-
-    public static final int ADD_INDEX = 1;
-    public static final int SUBS_INDEX = 2;
+public class Calculator2 {
 
     public static void main(String[] args) {
-        System.out.println(ADD_INDEX + "-toplama");
-        System.out.println(SUBS_INDEX + "-çıkartma");
+        int ab = CalculatorCommon.INITIAL_VAL;
+
+        ECalculationProcess[] valuesLoc = ECalculationProcess.values();
+
+        for (ECalculationProcess valueLoc : valuesLoc) {
+            if (valueLoc.getIndex() != 99){
+                System.out.println(valueLoc.getIndexSummary());
+            }
+        }
+
         System.out.println("seçiniz");
 
-        Scanner scannerLoc = new Scanner(System.in);
-        int index = scannerLoc.nextInt();
-        System.out.println("Index : " + index);
-        if (index < 1 || index > 2) {
-            System.out.println("Sadece 1,2 seçebilirsiniz.");
+        Scanner             scannerLoc             = new Scanner(System.in);
+        int                 iLoc                   = scannerLoc.nextInt();
+        ECalculationProcess eCalculationProcessLoc = ECalculationProcess.getEnumVal(iLoc);
+        System.out.println("Index : " + eCalculationProcessLoc);
+        if (eCalculationProcessLoc == ECalculationProcess.ERROR) {
+            System.out.println(CalculatorCommon.ERROR_STR);
             return;
         }
         System.out.println("İlk değer : ");
         int val1 = scannerLoc.nextInt();
         System.out.println("İkinci değer : ");
-        int val2 = scannerLoc.nextInt();
-        int sonuc = -1 ;
-        switch (index){
-            case ADD_INDEX:
+        int val2  = scannerLoc.nextInt();
+        int sonuc = -1;
+        switch (eCalculationProcessLoc) {
+            case ADD:
                 sonuc = val1 + val2;
                 break;
-            case SUBS_INDEX:
+            case SUBS:
                 sonuc = val1 - val2;
                 break;
             default:
@@ -36,5 +42,4 @@ public class Calculator {
         }
         System.out.println("Sonuç : " + sonuc);
     }
-
 }

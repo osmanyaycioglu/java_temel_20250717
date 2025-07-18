@@ -3,22 +3,22 @@ package org.example.java.abstraction;
 import java.io.Closeable;
 import java.io.IOException;
 
-public class HelloEng implements IHello, Closeable {
+public class HelloTr extends AbstractHello implements Closeable {
 
-    private String prefix;
-
-
+    public HelloTr() {
+        super("Türkçe");
+    }
 
     @Override
     public String sayHello(final String name,
                            final String surname) {
-        return "Hello " + name + " " + surname;
+        return "Merhaba " + name + " " + surname;
     }
 
     @Override
     public String sayGoodbye(final String name,
                              final String surname) {
-        return "Goodbye " + name + " " + surname;
+        return "Güle güle " + name + " " + surname;
     }
 
     @Override
@@ -26,11 +26,4 @@ public class HelloEng implements IHello, Closeable {
         System.out.println("Closed");
     }
 
-    public String getPrefix() {
-        return prefix;
-    }
-
-    public void setPrefix(final String prefixParam) {
-        prefix = prefixParam;
-    }
 }

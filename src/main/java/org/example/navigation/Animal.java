@@ -1,2 +1,4 @@
-package org.example.navigation;public class Animal {
+package org.example.navigation;
+
+public class Animal {
 }
